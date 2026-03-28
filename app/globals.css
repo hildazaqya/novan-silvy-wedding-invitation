@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-dark: #0D3663;
+  --primary-medium: #4A719C;
+  --primary-light-500: #A4D3E5;
+  --primary-light: #D7E2E8;
+  --neutral-800: #252525;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-medium: var(--primary-medium);
+  --color-primary-light: var(--primary-light);
+  --color-primary-light-500: var(--primary-light-500);
+  --color-neutral-800: var(--neutral-800);
+  --font-sans: var(--font-rasa);
+  --font-mono: var(--font-geist-mono);
+  --font-dancing-script: var(--font-dancing-script);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
