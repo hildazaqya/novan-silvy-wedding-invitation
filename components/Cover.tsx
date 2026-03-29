@@ -31,7 +31,7 @@ type Props = {
 
 export function Cover({ onOpen }: Props) {
       return (
-            <section className="bg-[url('/image/asset/cover-depan.webp')] bg-cover bg-center w-full h-svh fixed inset-0 flex flex-col items-center justify-between py-10 px-5 md:px-20">
+            <section className="bg-[url('/image/asset/cover-depan.webp')] bg-cover bg-center w-full max-w-137.5 mx-auto h-svh fixed inset-0 flex flex-col items-center justify-between py-10 px-5 md:px-20">
                   {/* Logo & Judul */}
                   <motion.div
                         initial={{ opacity: 0, y: -30 }}
