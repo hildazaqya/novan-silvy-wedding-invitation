@@ -42,7 +42,7 @@ export function SaveTheDate() {
       return (
             <main className="relative overflow-hidden bg-[url('/image/photo/save-the-date.webp')] py-5 px-10 bg-cover bg-position-[70%] lg:bg-center bg-right-2 h-screen flex flex-col">
                   <div className="absolute w-full h-full inset-0 bg-black/50"></div>
-                  <div className="z-10 flex flex-col items-center text-center pt-5 h-full">
+                  <div className="z-10 flex flex-col items-center text-center pt-10 h-full">
                         <motion.h2
                               initial={{ opacity: 0, y: -30 }}
                               whileInView={{ opacity: 1, y: 0 }}
@@ -60,9 +60,9 @@ export function SaveTheDate() {
                               transition={{ delay: 0.2, duration: 0.6 }}
                               className="flex flex-col items-center leading-none mt-4"
                         >
-                              <p className="text-white text-[58px] md:text-[64px] font-medium">26</p>
-                              <p className="text-white text-[58px] md:text-[64px] font-medium">April</p>
-                              <p className="text-white text-[58px] md:text-[64px] font-medium">2026</p>
+                              <p className="text-white text-[64px] md:text-[70px] font-medium">26</p>
+                              <p className="text-white text-[64px] md:text-[70px] font-medium">April</p>
+                              <p className="text-white text-[64px] md:text-[70px] font-medium">2026</p>
                         </motion.div>
 
                         <motion.hr
