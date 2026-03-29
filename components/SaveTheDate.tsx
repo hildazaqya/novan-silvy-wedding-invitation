@@ -48,18 +48,23 @@ export function SaveTheDate() {
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.6, ease: "easeOut" }}
-                              className="text-[32px] md:text-4xl font-semibold text-white"
+                              className="text-xl md:text-2xl  text-neutral-200"
                         >
-                              Save<br /> The Date
+                              Save The Date
                         </motion.h2>
 
-                        <motion.p
-                              initial={{ opacity: 0 }}
-                              whileInView={{ opacity: 1 }}
+                        <motion.div
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
-                              transition={{ delay: 0.2, duration: 0.5 }}
-                              className="text-lg lg:text-xl text-white mt-1 md:mt-5"
-                        >Minggu, 26 April 2026</motion.p>
+                              transition={{ delay: 0.2, duration: 0.6 }}
+                              className="flex flex-col items-center leading-none mt-4"
+                        >
+                              <p className="text-white text-[58px] md:text-[64px] font-medium">26</p>
+                              <p className="text-white text-[58px] md:text-[64px] font-medium">April</p>
+                              <p className="text-white text-[58px] md:text-[64px] font-medium">2026</p>
+                        </motion.div>
+
                         <motion.hr
                               initial={{ scaleX: 0 }}
                               whileInView={{ scaleX: 1 }}
@@ -108,7 +113,7 @@ export function SaveTheDate() {
                               transition={{ delay: 0.7, duration: 0.6 }}
                         >
                               <Link
-                              target="_blank"
+                                    target="_blank"
                                     href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Novan+Silvy+Wedding+Day&details=Acara+Pernikahan+Novan+%26+Silvy+yang+akan+diselenggarakan+pada+Minggu,+26+April+2026&location=GKIN+Hosana,+JL.+Bandulan+14,+Sukun,+Malang&dates=20260426/20260426"
                                     className="bg-primary-medium flex items-center gap-3 rounded-full px-10 py-2 text-white mt-3 hover:bg-primary-dark transition"
                               >

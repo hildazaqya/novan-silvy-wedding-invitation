@@ -64,7 +64,7 @@ export function CoverMainPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                        className="w-full bg-white/45 backdrop-blur-sm rounded-2xl py-6 px-8 lg:px-14 text-center shadow-md mb-4"
+                        className="w-full bg-gray-200/45 backdrop-blur-sm rounded-2xl py-6 px-8 lg:px-14 text-center shadow-md mb-4"
                   >
                         <p className="text-sm text-gray-600">Yth. Bapak/Ibu/Saudara/I</p>
                         <Suspense fallback={<div className="h-7" />}>

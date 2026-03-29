@@ -52,10 +52,10 @@ export function WeddingGift() {
                         fill
                         className="object-cover opacity-40 absolute mix-blend-multiply inset-0 w-full h-full z-0"
                   />
-                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute rotate-180 -bottom-9 -left-9" width={160} height={160} delay={0} />
-                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute rotate-270 -top-9 -left-9" width={160} height={160} delay={0.5} />
-                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute -top-9 -right-9" width={160} height={160} delay={1} />
-                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute rotate-90 -bottom-9 -right-9" width={160} height={160} delay={1.5} />
+                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute rotate-180 -bottom-13 -left-13" width={160} height={160} delay={0} />
+                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute rotate-270 -top-13 -left-13" width={160} height={160} delay={0.5} />
+                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute -top-13 -right-13" width={160} height={160} delay={1} />
+                  <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute rotate-90 -bottom-13 -right-13" width={160} height={160} delay={1.5} />
 
                   {/* Header */}
                   <motion.div

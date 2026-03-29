@@ -27,9 +27,9 @@ export function FloatingFlower({
       return (
             <motion.div
                   className={className}
-                  animate={{ x: [0, 10, 0, -10, 0] }}
+                  animate={{ rotate: [-12, 12, -12] }}
                   transition={{
-                        duration: 6,
+                        duration: 10,
                         repeat: Infinity,
                         ease: "easeInOut",
                         delay,

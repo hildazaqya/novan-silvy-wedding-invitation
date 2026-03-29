@@ -8,7 +8,7 @@ export function GroomBride() {
       return (
             <main className="relative bg-[url('/image/asset/cover-depan.webp')] p-5 bg-cover flex flex-col h-full">
                   <div className="absolute w-full h-full inset-0 bg-white/10 backdrop-blur-sm z-0"></div>
-                  <div className="bg-primary-light h-full rounded-[280px] z-10 w-full shadow-lg flex flex-col items-center justify-center gap-5 pt-10 pb-28 px-6">
+                  <div className="relative overflow-hidden bg-primary-light h-full rounded-[280px] z-10 w-full shadow-lg flex flex-col items-center justify-center gap-5 pt-10 pb-28 px-6">
 
                         {/* Groom */}
                         <motion.div
@@ -16,7 +16,7 @@ export function GroomBride() {
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true, margin: "-60px" }}
                               transition={{ duration: 0.7, ease: "easeOut" }}
-                              className="flex flex-col items-center gap-1"
+                              className="z-10 flex flex-col items-center gap-1"
                         >
                               <div className="relative">
                                     <Image
@@ -45,7 +45,7 @@ export function GroomBride() {
                               whileInView={{ opacity: 1, scale: 1 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-                              className="font-dancing-script text-4xl md:text-5xl text-primary-medium font-bold leading-none"
+                              className="z-10 font-dancing-script text-4xl md:text-5xl text-primary-medium font-bold leading-none"
                         >&</motion.p>
 
                         {/* Bride */}
@@ -54,7 +54,7 @@ export function GroomBride() {
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true, margin: "-60px" }}
                               transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-                              className="flex flex-col items-center gap-1"
+                              className="z-10 flex flex-col items-center gap-1"
                         >
                               <div className="relative">
                                     <Image
@@ -77,6 +77,7 @@ export function GroomBride() {
                               <p className="text-sm md:text-base text-neutral-800 text-center">Putri dari Bapak Yoyok Edhi Sunaryo dan Ibu Saunah</p>
                         </motion.div>
 
+                        <div className="w-full h-full bg-[url('/image/asset/flower-branch.webp')] bg-primary-light absolute z-0 opacity-50 bg-blend-color-dodge" />
                   </div>
             </main>
       )
