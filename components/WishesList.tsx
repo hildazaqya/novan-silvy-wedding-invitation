@@ -47,7 +47,7 @@ export function WishesList({ wishes }: Props) {
       return (
             <div className="w-full flex flex-col gap-4">
                   {currentItems.map((wish) => (
-                        <div key={wish.id} className="flex flex-col gap-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-3">
+                        <div key={wish.id} className="flex flex-col gap-1.5 bg-primary-dark/20 backdrop-blur-md border border-gray-500/50 rounded-lg px-4 py-3">
                               <p className="text-white text-sm leading-relaxed">{wish.message}</p>
                               <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-1.5 text-white/80 text-sm">

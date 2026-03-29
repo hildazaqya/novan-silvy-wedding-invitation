@@ -33,7 +33,7 @@ const gallery: galleryTypes[] = [
             url: "/image/photo/WIL00739_gm_optimized.webp",
       },
       {
-            url: "/image/photo/WIL00257_gm_optimized.webp",
+            url: "/image/photo/WIL00743_gm_optimized.webp", customStyle: "object-[50%_60%] scale-110",
       },
 ];
 

@@ -11,7 +11,7 @@ const accounts = [
       { bank: "CIMB NIAGA", number: "763900814600", holder: "Albertus Novan Richardo" },
 ];
 
-const WA_NUMBER = "6285157534949";
+const WA_NUMBER = "6289601623861";
 
 function CopyButton({ text }: { text: string }) {
       const [copied, setCopied] = useState(false);
@@ -39,7 +39,7 @@ export function WeddingGift() {
 
       const handleWhatsapp = () => {
             const msg = encodeURIComponent(
-                  `Halo, saya ${name} ingin mengkonfirmasi transfer hadiah pernikahan melalui rekening ${rekening}.`
+                  `Halo, perkenalkan saya ${name}. Saya ingin mengonfirmasi bahwa saya telah melakukan transfer hadiah pernikahan melalui rekening ${rekening}. Terima kasih.`
             );
             window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
       };

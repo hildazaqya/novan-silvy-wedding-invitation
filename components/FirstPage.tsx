@@ -14,7 +14,7 @@ export function FirstPage() {
                         transition={{ duration: 0.7, ease: "easeOut" }}
                         className="relative"
                   >
-                        <Image src="/image/photo/first_page.webp" alt="First Page" width={800} height={800} className="w-full max-w-100 lg:max-w-110 object-cover h-100 lg:h-124 rounded-[104px]" />
+                        <Image src="/image/photo/first_page.webp" alt="First Page" width={800} height={800} className="w-full max-w-80 lg:max-w-110 object-cover h-100 lg:h-124 rounded-[104px]" />
                         <FloatingFlower src="/image/asset/asset-flower-1.webp" className="absolute -bottom-2 -left-2" imageClassName="w-32 h-32 lg:w-40 lg:h-40" width={160} height={160} delay={0} />
                         <FloatingFlower src="/image/asset/asset-flower-1.webp" className="absolute -top-2 -right-2 rotate-180" imageClassName="w-32 h-32 lg:w-40 lg:h-40" width={160} height={160} delay={1.5} />
                   </motion.div>
