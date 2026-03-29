@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { IoMailOutline } from "react-icons/io5";
 import { Suspense } from "react";
+import { motion } from "motion/react";
 
 function toTitleCase(str: string) {
       return str
@@ -30,9 +31,14 @@ type Props = {
 
 export function Cover({ onOpen }: Props) {
       return (
-            <section className="bg-[url('/image/asset/cover-depan.webp')] bg-cover bg-center w-full h-svh flex flex-col items-center justify-between py-10 px-5 md:px-20">
+            <section className="bg-[url('/image/asset/cover-depan.webp')] bg-cover bg-center w-full h-screen flex flex-col items-center justify-between py-10 px-5 md:px-20">
                   {/* Logo & Judul */}
-                  <div className="flex flex-col items-center gap-1 mt-4">
+                  <motion.div
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
+                        className="flex flex-col items-center gap-1 mt-4"
+                  >
                         <div className="relative w-full h-20 md:h-24 flex items-center justify-center">
                               <Image
                                     src="/image/asset/n-s.webp"
@@ -50,10 +56,15 @@ export function Cover({ onOpen }: Props) {
                         <p className="text-base md:text-lg text-neutral-800">
                               Minggu, 26 April 2026
                         </p>
-                  </div>
+                  </motion.div>
 
                   {/* Kartu undangan */}
-                  <div className="w-full bg-white/45 backdrop-blur-sm rounded-2xl py-6 px-8 lg:px-14 text-center shadow-md mb-4">
+                  <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
+                        className="w-full bg-white/45 backdrop-blur-sm rounded-2xl py-6 px-8 lg:px-14 text-center shadow-md mb-4"
+                  >
                         <p className="text-sm text-gray-600">Yth. Bapak/Ibu/Saudara/I</p>
                         <Suspense fallback={<div className="h-7" />}>
                               <GuestName />
@@ -62,14 +73,17 @@ export function Cover({ onOpen }: Props) {
                               Tanpa mengurangi rasa hormat, kami mengundang anda untuk menghadiri
                               acara pernikahan kami.
                         </p>
-                        <button
+                        <motion.button
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.4, ease: "easeOut", delay: 0.55 }}
                               onClick={onOpen}
                               className="mt-4 flex items-center gap-5 bg-primary-medium text-white px-10 py-2 rounded-2xl mx-auto text-base hover:bg-primary-dark transition-colors"
                         >
                               <IoMailOutline size={24} />
                               Buka Undangan
-                        </button>
-                  </div>
+                        </motion.button>
+                  </motion.div>
             </section>
       );
 }

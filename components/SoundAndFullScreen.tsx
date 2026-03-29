@@ -59,7 +59,7 @@ export function SoundAndFullScreen() {
                         <button
                               onClick={toggleFullscreen}
                               aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-                              className="w-12 h-12 rounded-full bg-primary-medium/80 backdrop-blur-sm text-white flex items-center justify-center shadow-lg hover:bg-primary-medium transition-colors"
+                              className="hidden lg:flex w-12 h-12 rounded-full bg-primary-medium/80 backdrop-blur-sm text-white items-center justify-center shadow-lg hover:bg-primary-medium transition-colors"
                         >
                               {isFullscreen ? <IoContract size={20} /> : <IoExpand size={20} />}
                         </button>

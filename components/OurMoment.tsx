@@ -3,18 +3,38 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { FaX } from "react-icons/fa6";
-
-const gallery = [
-      "/image/photo/WIL00053_gm_optimized.webp",
-      "/image/photo/WIL00416_gm_optimized.webp",
-      "/image/photo/WIL00435_gm_optimized.webp",
-      "/image/photo/WIL00117_gm_optimized.webp",
-      "/image/photo/WIL00520_gm_optimized.webp",
-      "/image/photo/WIL00553_gm_optimized.webp",
-      "/image/photo/WIL00739_gm_optimized.webp",
-      "/image/photo/WIL00257_gm_optimized.webp",
+import { motion } from "motion/react";
 
 
+type galleryTypes = {
+      url: string, customStyle?: string,
+}
+
+const gallery: galleryTypes[] = [
+      {
+            url: "/image/photo/WIL00053_gm_optimized.webp", customStyle: "object-[50%_70%] scale-110",
+      },
+      {
+            url: "/image/photo/WIL00416_gm_optimized.webp",
+      },
+      {
+            url: "/image/photo/WIL00435_gm_optimized.webp", customStyle: "object-[50%_70%] scale-110",
+      },
+      {
+            url: "/image/photo/WIL00117_gm_optimized.webp", customStyle: "object-[50%_70%] scale-125"
+      },
+      {
+            url: "/image/photo/WIL00520_gm_optimized.webp",customStyle: "object-[50%_70%] scale-110",
+      },
+      {
+            url: "/image/photo/WIL00553_gm_optimized.webp",
+      },
+      {
+            url: "/image/photo/WIL00739_gm_optimized.webp",
+      },
+      {
+            url: "/image/photo/WIL00257_gm_optimized.webp",
+      },
 ];
 
 const leftPhotos = gallery.filter((_, i) => i % 2 === 0);
@@ -65,16 +85,34 @@ export function OurMoment() {
             <main className="relative bg-[url('/image/asset/cover-depan.webp')] p-5 bg-cover flex flex-col">
                   <div className="absolute w-full h-full inset-0 bg-white/10 backdrop-blur-sm z-0" />
                   <div className="bg-primary-light rounded-4xl z-10 w-full shadow-lg flex flex-col items-center gap-2 p-10 px-6">
-                        <h2 className="text-2xl md:text-3xl font-semibold text-primary-dark">Our Moment</h2>
-                        <p className="text-center text-xs md:text-sm text-neutral-800 italic px-2">
+                        <motion.h2
+                              initial={{ opacity: 0, y: -20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.6, ease: "easeOut" }}
+                              className="text-2xl md:text-3xl font-semibold text-primary-dark"
+                        >Our Moment</motion.h2>
+                        <motion.p
+                              initial={{ opacity: 0 }}
+                              whileInView={{ opacity: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: 0.2, duration: 0.6 }}
+                              className="text-center text-xs md:text-sm text-neutral-800 italic px-2"
+                        >
                               &ldquo;In all the world, there is no heart for me like yours. In all
                               the world, there is no love for you like mine.&rdquo;
                               <br />
                               <span className="not-italic font-medium">&ndash;&nbsp;Maya Angelou</span>
-                        </p>
+                        </motion.p>
 
                         {/* Masonry-style 2-column photo grid */}
-                        <div className="flex gap-2 w-full mt-5">
+                        <motion.div
+                              initial={{ opacity: 0 }}
+                              whileInView={{ opacity: 1 }}
+                              viewport={{ once: true, margin: "-60px" }}
+                              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                              className="flex gap-2 w-full mt-5"
+                        >
                               {/* Left column */}
                               <div className="flex flex-col gap-2 flex-1">
                                     {leftPhotos.map((photo, colIdx) => {
@@ -83,16 +121,16 @@ export function OurMoment() {
                                                 <div
                                                       key={galleryIdx}
                                                       className={`${colIdx % 2 === 0 ? "h-30 md:h-35.5 object-center" : "h-54 md:h-60"
-                                                            } relative cursor-pointer overflow-hidden rounded-lg md:rounded-xl`}
+                                                            }  relative cursor-pointer overflow-hidden rounded-lg md:rounded-xl`}
                                                       onClick={() => openLightbox(galleryIdx)}
                                                 >
                                                       <Image
-                                                            src={photo}
+                                                            src={photo.url}
                                                             alt={`Our moment ${galleryIdx + 1}`}
                                                             fill
-                                                            className={`object-cover object-center transition-transform duration-300 ${colIdx % 2 === 0
-                                                                        ? "scale-125 hover:scale-130"
-                                                                        : "hover:scale-105"
+                                                            className={`object-cover ${photo.customStyle ?? ""} transition-transform duration-300 ${colIdx % 2 === 0
+                                                                  ? "scale-125 hover:scale-130"
+                                                                  : "hover:scale-105"
                                                                   }`}
                                                       />
                                                 </div>
@@ -111,19 +149,19 @@ export function OurMoment() {
                                                       onClick={() => openLightbox(galleryIdx)}
                                                 >
                                                       <Image
-                                                            src={photo}
+                                                            src={photo.url}
                                                             alt={`Our moment ${galleryIdx + 1}`}
                                                             fill
-                                                            className={`object-cover object-center transition-transform duration-300 ${colIdx % 2 !== 0
-                                                                        ? "scale-125 hover:scale-130"
-                                                                        : "hover:scale-105"
+                                                            className={`object-cover ${photo.customStyle ?? ""} transition-transform duration-300 ${colIdx % 2 !== 0
+                                                                  ? "scale-125 hover:scale-130"
+                                                                  : "hover:scale-105"
                                                                   }`}
                                                       />
                                                 </div>
                                           );
                                     })}
                               </div>
-                        </div>
+                        </motion.div>
                   </div>
 
                   {/* Lightbox */}
@@ -165,7 +203,7 @@ export function OurMoment() {
                                     style={{ animation: "lightboxFadeIn 0.2s ease" }}
                               >
                                     <Image
-                                          src={gallery[currentIndex]}
+                                          src={gallery[currentIndex].url}
                                           alt={`Moment ${currentIndex + 1}`}
                                           fill
                                           className="object-contain"

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-// import { IoMailOutline } from "react-icons/io5";
 import { Suspense } from "react";
+import { motion } from "motion/react";
 
 function toTitleCase(str: string) {
       return str
@@ -32,7 +32,13 @@ export function CoverMainPage() {
       return (
             <section className="bg-[url('/image/asset/cover-depan.webp')] bg-cover bg-center w-full h-svh flex flex-col items-center justify-between pt-10 py-20 px-5 md:px-20">
                   {/* Logo & Judul */}
-                  <div className="flex flex-col items-center gap-1 mt-4">
+                  <motion.div
+                        initial={{ opacity: 0, y: -30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
+                        className="flex flex-col items-center gap-1 mt-4"
+                  >
                         <div className="relative w-full h-20 md:h-24 flex items-center justify-center">
                               <Image
                                     src="/image/asset/n-s.webp"
@@ -50,10 +56,16 @@ export function CoverMainPage() {
                         <p className="text-base md:text-lg text-neutral-800">
                               Minggu, 26 April 2026
                         </p>
-                  </div>
+                  </motion.div>
 
                   {/* Kartu undangan */}
-                  <div className="w-full bg-white/45 backdrop-blur-sm rounded-2xl py-6 px-8 lg:px-14 text-center shadow-md mb-4">
+                  <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                        className="w-full bg-white/45 backdrop-blur-sm rounded-2xl py-6 px-8 lg:px-14 text-center shadow-md mb-4"
+                  >
                         <p className="text-sm text-gray-600">Yth. Bapak/Ibu/Saudara/I</p>
                         <Suspense fallback={<div className="h-7" />}>
                               <GuestName />
@@ -62,7 +74,7 @@ export function CoverMainPage() {
                               Tanpa mengurangi rasa hormat, kami mengundang anda untuk menghadiri
                               acara pernikahan kami.
                         </p>
-                  </div>
+                  </motion.div>
             </section>
       );
 }

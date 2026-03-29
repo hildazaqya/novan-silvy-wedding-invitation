@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import { RsvpForm } from "./RsvpForm";
 import { WishesList } from "./WishesList";
 import type { Wish } from "@/lib/rsvp";
@@ -38,23 +39,35 @@ export function RsvpWishes() {
                   <div className="absolute w-full inset-0 bg-black/50" />
 
                   {/* Header & Form */}
-                  <div className="z-10 flex flex-col items-center text-center pt-5">
+                  <motion.div
+                        initial={{ opacity: 0, y: -30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="z-10 flex flex-col items-center text-center pt-5"
+                  >
                         <h2 className="text-2xl md:text-3xl font-semibold text-white">RSVP &amp; Wishes</h2>
                         <p className="text-sm text-gray-200 max-w-90 mt-2">
                               Kepada tamu undangan yang berkenan hadir dalam acara pernikahan kami,
                               mohon kesediaannya untuk mengisi formulir konfirmasi kehadiran berikut.
                         </p>
                         <RsvpForm onSubmit={addWish} />
-                  </div>
+                  </motion.div>
 
                   {/* Wishes list */}
-                  <div className="z-10 flex flex-col w-full mt-6 pb-28">
+                  <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+                        className="z-10 flex flex-col w-full mt-6 pb-28"
+                  >
                         {loading ? (
                               <p className="text-white/40 text-sm text-center mt-6">Memuat ucapan...</p>
                         ) : (
                               <WishesList wishes={wishes} />
                         )}
-                  </div>
+                  </motion.div>
             </main>
       );
 }

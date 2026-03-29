@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 import { FloatingFlower } from "./FloatingFlower";
 
 export function GroomBride() {
@@ -8,7 +11,13 @@ export function GroomBride() {
                   <div className="bg-primary-light h-full rounded-[280px] z-10 w-full shadow-lg flex flex-col items-center justify-center gap-5 pt-10 pb-28 px-6">
 
                         {/* Groom */}
-                        <div className="flex flex-col items-center gap-1">
+                        <motion.div
+                              initial={{ opacity: 0, x: -40 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true, margin: "-60px" }}
+                              transition={{ duration: 0.7, ease: "easeOut" }}
+                              className="flex flex-col items-center gap-1"
+                        >
                               <div className="relative">
                                     <Image
                                           src="/image/photo/groom.webp"
@@ -28,13 +37,25 @@ export function GroomBride() {
                               <p className="text-sm md:text-base text-primary-medium font-medium mt-2">THE GROOM</p>
                               <h2 className="text-xl md:text-2xl font-bold text-neutral-800 text-center">ALBERTUS NOVAN RICHARDO</h2>
                               <p className="text-sm md:text-base text-neutral-800 text-center">Putra dari Bapak Tantoro Hadi & Ibu Sri Heru Bekti R.</p>
-                        </div>
+                        </motion.div>
 
                         {/* Ampersand */}
-                        <p className="font-dancing-script text-4xl md:text-5xl text-primary-medium font-bold leading-none">&</p>
+                        <motion.p
+                              initial={{ opacity: 0, scale: 0.5 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                              className="font-dancing-script text-4xl md:text-5xl text-primary-medium font-bold leading-none"
+                        >&</motion.p>
 
                         {/* Bride */}
-                        <div className="flex flex-col items-center gap-1">
+                        <motion.div
+                              initial={{ opacity: 0, x: 40 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true, margin: "-60px" }}
+                              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                              className="flex flex-col items-center gap-1"
+                        >
                               <div className="relative">
                                     <Image
                                           src="/image/photo/bride.webp"
@@ -54,7 +75,7 @@ export function GroomBride() {
                               <p className="text-sm md:text-base text-primary-medium font-medium mt-2">THE BRIDE</p>
                               <h2 className="text-xl md:text-2xl font-bold text-neutral-800 text-center">SILVY AYU KUMALASARI</h2>
                               <p className="text-sm md:text-base text-neutral-800 text-center">Putri dari Bapak Yoyok Edhi Sunaryo dan Ibu Saunah</p>
-                        </div>
+                        </motion.div>
 
                   </div>
             </main>

@@ -13,7 +13,6 @@ import { WeddingGift } from "../components/WeddingGift";
 import { LastPage } from "../components/LastPage";
 import { Cover } from "../components/Cover";
 import { SoundAndFullScreen } from "../components/SoundAndFullScreen";
-import { FadeInSection } from "../components/FadeInSection";
 import { CoverMainPage } from "@/components/CoverMainPage";
 
 export default function Home() {
@@ -36,19 +35,19 @@ export default function Home() {
 
         {opened && (
           <>
-            <FadeInSection><CoverMainPage /></FadeInSection>
-            <FadeInSection><FirstPage /></FadeInSection>
-            <FadeInSection><GroomBride /></FadeInSection>
-            <FadeInSection><SaveTheDate /></FadeInSection>
-            <FadeInSection><WeddingEvent /></FadeInSection>
-            <FadeInSection><OurMoment /></FadeInSection>
-            <FadeInSection><RsvpWishes /></FadeInSection>
-            <FadeInSection><WeddingGift /></FadeInSection>
-            <FadeInSection><LastPage /></FadeInSection>
+            <SoundAndFullScreen />
+            <CoverMainPage />
+            <FirstPage />
+            <GroomBride />
+            <SaveTheDate />
+            <WeddingEvent />
+            <OurMoment />
+            <RsvpWishes />
+            <WeddingGift />
+            <LastPage />
           </>
         )}
       </div>
-      <SoundAndFullScreen />
       <Image
         src="/image/asset/bg-flower-pattern.png"
         alt="Background Flower Pattern"

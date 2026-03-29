@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "motion/react";
 import { FloatingFlower } from "./FloatingFlower";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -57,16 +58,28 @@ export function WeddingGift() {
                   <FloatingFlower src="/image/asset/asset-flower-3.webp" className="absolute rotate-90 -bottom-9 -right-9" width={160} height={160} delay={1.5} />
 
                   {/* Header */}
-                  <div className="z-10 flex flex-col text-center gap-1 mt-8">
+                  <motion.div
+                        initial={{ opacity: 0, y: -30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="z-10 flex flex-col text-center gap-1 mt-8"
+                  >
                         <h2 className="text-2xl md:text-3xl font-semibold text-primary-medium">Wedding Gift</h2>
                         <p className="text-sm md:text-base text-gray-800">
                               Tanpa mengurangi rasa hormat kami, bagi para tamu yang ingin berbagi
                               kasih melalui hadiah untuk kedua mempelai, dapat mengirimnya melalui:
                         </p>
-                  </div>
+                  </motion.div>
 
                   {/* Bank accounts */}
-                  <div className="z-10 flex flex-row gap-4 w-full justify-center">
+                  <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+                        className="z-10 flex flex-row gap-4 w-full justify-center"
+                  >
                         {accounts.map((acc) => (
                               <div key={acc.bank} className="flex flex-col items-center flex-1">
                                     <p className="text-primary-medium font-semibold text-sm md:text-base">{acc.bank}</p>
@@ -75,12 +88,24 @@ export function WeddingGift() {
                                     <CopyButton text={acc.number} />
                               </div>
                         ))}
-                  </div>
+                  </motion.div>
 
-                  <hr className="z-10 border-primary-light w-full" />
+                  <motion.hr
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
+                        className="z-10 border-primary-light w-full origin-left"
+                  />
 
                   {/* Konfirmasi */}
-                  <div className="z-10 flex flex-col gap-3">
+                  <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                        className="z-10 flex flex-col gap-3"
+                  >
                         <h3 className="text-lg md:text-xl font-semibold text-primary-medium">Konfirmasi</h3>
                         <input
                               type="text"
@@ -115,7 +140,7 @@ export function WeddingGift() {
                                     Konfirmasi Melalui Whatsapp
                               </button>
                         </div>
-                  </div>
+                  </motion.div>
             </main>
       );
 }
