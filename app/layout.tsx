@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   title: "Novan Silvy Wedding Invitation",
   description: "Join us in celebrating the wedding of Novan and Silvy on April 26, 2026.",
   icons: {
-    icon: "/image/asset/logo-wedding.svg",
+    icon: "/image/asset/logo-wedding.webp",
   },
   openGraph: {
     title: "Novan Silvy Wedding Invitation",
     description: "Join us in celebrating the wedding of Novan and Silvy on April 26, 2026.",
     images: [
       {
-        url: "/image/asset/logo-wedding.svg",
+        url: "/image/asset/logo-wedding.webp",
         width: 512,
         height: 512,
         alt: "Novan & Silvy Wedding",
@@ -54,8 +54,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${rasa.variable} ${dancingScript.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/image/asset/logo-wedding.svg" type="image/webp" />
-        <link rel="apple-touch-icon" href="/image/asset/logo-wedding.svg" />
+        <link rel="icon" href="/image/asset/logo-wedding.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/image/asset/logo-wedding.webp" />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
