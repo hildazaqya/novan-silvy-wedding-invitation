@@ -10,7 +10,7 @@ import { motion } from "motion/react";
 
 export function WeddingEvent() {
       return (
-            <main className="relative overflow-hidden bg-white flex flex-col gap-3 lg:gap-6 min-h-screen items-center justify-center px-5 py-10 lg:p-10">
+            <main className="relative overflow-hidden bg-white flex flex-col gap-3 lg:gap-6 min-h-screen px-5 py-10 lg:p-10">
                   <Image
                         src="/image/asset/bg-flower-pattern.png"
                         alt="Background Flower Pattern"
@@ -79,7 +79,7 @@ export function WeddingEvent() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-60px" }}
                         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                        className="z-10 bg-primary-light/40 backdrop-blur-md border border-primary-light-500/40 rounded-2xl p-5 w-full mb-10 md:mb-20 flex flex-col gap-3"
+                        className="z-10 bg-primary-light/40 backdrop-blur-md border border-primary-light-500/40 rounded-2xl p-5 w-full mt-2 mb-10 md:mb-20 flex flex-col gap-3"
                   >
                         <h3 className="text-xl md:text-2xl font-bold text-primary-medium">Resepsi</h3>
                         <div className="flex items-center gap-3 text-neutral-800 text-sm md:text-base">
