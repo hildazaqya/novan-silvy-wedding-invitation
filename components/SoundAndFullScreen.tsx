@@ -31,6 +31,21 @@ export function SoundAndFullScreen() {
             audio.muted = muted;
       }, [muted]);
 
+      // Pause/resume on tab visibility change
+      useEffect(() => {
+            const handler = () => {
+                  const audio = audioRef.current;
+                  if (!audio) return;
+                  if (document.hidden) {
+                        audio.pause();
+                  } else {
+                        audio.play().catch(() => { });
+                  }
+            };
+            document.addEventListener("visibilitychange", handler);
+            return () => document.removeEventListener("visibilitychange", handler);
+      }, []);
+
       // Track fullscreen changes (e.g. user presses Escape)
       useEffect(() => {
             const handler = () => setIsFullscreen(!!document.fullscreenElement);
