@@ -24,7 +24,7 @@ const gallery: galleryTypes[] = [
             url: "/image/photo/WIL00117_gm_optimized.webp", customStyle: "object-[50%_70%] scale-125"
       },
       {
-            url: "/image/photo/WIL00520_gm_optimized.webp",customStyle: "object-[50%_70%] scale-110",
+            url: "/image/photo/WIL00520_gm_optimized.webp", customStyle: "object-[50%_70%] scale-110",
       },
       {
             url: "/image/photo/WIL00553_gm_optimized.webp",
@@ -170,60 +170,63 @@ export function OurMoment() {
                               className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center select-none"
                               onTouchStart={handleTouchStart}
                               onTouchEnd={handleTouchEnd}
+                              onClick={() => setLightboxOpen(false)}
                         >
                               {/* Close button */}
                               <button
                                     className="absolute top-5 right-5 text-white/80 hover:text-white text-2xl z-10 p-2"
-                                    onClick={() => setLightboxOpen(false)}
+                                    onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
                                     aria-label="Close lightbox"
                               >
                                     <FaX size={16} />
                               </button>
 
-                              {/* Counter */}
-                              <span className="absolute top-6 left-1/2 -translate-x-1/2 text-white/70 text-sm">
-                                    {currentIndex + 1} / {gallery.length}
-                              </span>
-
                               {/* Prev */}
                               <button
                                     className="absolute left-2 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-5xl px-3 py-4 z-10"
-                                    onClick={() =>
-                                          setCurrentIndex((i) => (i - 1 + gallery.length) % gallery.length)
-                                    }
+                                    onClick={(e) => {
+                                          e.stopPropagation();
+                                          setCurrentIndex((i) => (i - 1 + gallery.length) % gallery.length);
+                                    }}
                                     aria-label="Previous photo"
                               >
                                     &#8249;
                               </button>
 
-                              {/* Image */}
-                              <div
-                                    key={currentIndex}
-                                    className="relative w-[76vw] md:w-[85vw] h-[80vh]"
-                                    style={{ animation: "lightboxFadeIn 0.2s ease" }}
-                              >
-                                    <Image
-                                          src={gallery[currentIndex].url}
-                                          alt={`Moment ${currentIndex + 1}`}
-                                          fill
-                                          className="object-contain"
-                                          priority
-                                    />
+                              {/* Image + Counter */}
+                              <div className="flex flex-col items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                                    <span className="text-white/70 text-sm">
+                                          {currentIndex + 1} / {gallery.length}
+                                    </span>
+                                    <div
+                                          key={currentIndex}
+                                          className="relative w-[76vw] md:w-[85vw] h-[75vh]"
+                                          style={{ animation: "lightboxFadeIn 0.2s ease" }}
+                                    >
+                                          <Image
+                                                src={gallery[currentIndex].url}
+                                                alt={`Moment ${currentIndex + 1}`}
+                                                fill
+                                                className="object-contain"
+                                                priority
+                                          />
+                                    </div>
                               </div>
 
                               {/* Next */}
                               <button
                                     className="absolute right-2 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-5xl px-3 py-4 z-10"
-                                    onClick={() =>
-                                          setCurrentIndex((i) => (i + 1) % gallery.length)
-                                    }
+                                    onClick={(e) => {
+                                          e.stopPropagation();
+                                          setCurrentIndex((i) => (i + 1) % gallery.length);
+                                    }}
                                     aria-label="Next photo"
                               >
                                     &#8250;
                               </button>
 
                               {/* Dot indicators */}
-                              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-1.5">
+                              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-1.5" onClick={(e) => e.stopPropagation()}>
                                     {gallery.map((_, i) => (
                                           <button
                                                 key={i}
